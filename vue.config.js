@@ -28,7 +28,12 @@ module.exports = {
 		hotOnly: false // 没啥效果，热模块，webpack已经做好了
 		// 代理相关
 		/*proxy: {
-	    	'/api': 'http://localhost:3000'
+	        '/': {
+	            target: 'https://58.144.147.140:443',
+	            ws: true,
+	            changOrigin: true,
+	            secure: false,
+	        }
 	    }*/
 	},
 
