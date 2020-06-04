@@ -7,7 +7,7 @@ var $_development = {
 		serviceModule: ''
 	},
 	mqtt: {
-		host: '172.26.1.233',
+		host: '172.26.1.201',
 		port: '8083',
 		path: 'mqtt',
 		username: 'qif',
