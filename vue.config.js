@@ -44,15 +44,15 @@ module.exports = {
 	lintOnSave: false,
 
 	// 处理依赖包的兼容性
-	transpileDependencies: ['webpack-dev-server/client','echarts', 'echarts/dist/echarts.min', 'debug'],
+	transpileDependencies: ['webpack-dev-server/client', 'echarts', 'echarts/dist/echarts.min', 'debug'],
 
 	// css相关
 	css: {
 		loaderOptions: {
 			less: {
-				lessOptions:{
-              		javascriptEnabled: true,
-            	}
+				lessOptions: {
+					javascriptEnabled: true
+				}
 			},
 			stylus: {
 				// 导入全局 styl
