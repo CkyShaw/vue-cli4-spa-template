@@ -7,7 +7,7 @@
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"format": "prettier --write \"src/**/*.js\" \"src/**/*.vue\" \"src/**/*.json\"",
-		"prettier": "prettier --write \"src/**/*.{js,jsx,vue,ts,css,less,scss,html,md}\""
+		"prettier": "prettier --write \"src/**/*.{js,jsx,ts,json,vue,css,less,scss,md,html}\""
 	},
 	"dependencies": {
 		"ant-design-vue": "^1.6.2",
@@ -59,7 +59,11 @@
 		"pre-commit": "lint-staged"
 	},
 	"lint-staged": {
-		"*.{js,jsx,vue,ts,css,less,scss,html,md}": [
+		"*.{json,css,less,scss,md,html}": [
+			"prettier --write",
+			"git add"
+		],
+		"*.{js,jsx,ts,vue}": [
 			"vue-cli-service lint",
 			"git add"
 		]
