@@ -1,5 +1,5 @@
 /*!
- * api案例模块
+ * api主模块
  */
 
 import axios from '@/libs/api.request'
