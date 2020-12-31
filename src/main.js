@@ -47,7 +47,7 @@ Vue.prototype.$_listen = listen
 Vue.prototype.$_stop = stop
 
 // 图表
-import echarts from 'echarts/dist/echarts.min.js'
+let echarts = require('echarts');
 // import echarts from 'echarts'
 Vue.prototype.$_echarts = echarts
 
