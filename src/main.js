@@ -39,20 +39,8 @@ Highcharts3D(Highcharts);
 Highmaps(Highcharts);
 Vue.prototype.$_highCharts = Highcharts*/
 
-/**
- * 多模块相同集中配置
- * rem响应设置 样式重置 基本过渡效果 字体文件
- */
 // 动态响应rem
 import './libs/rem'
-// 重置样式
-import './assets/style/base.css'
-// 全局过渡效果
-import './assets/style/transition.css'
-// 滚动条样式
-import './assets/style/webkit-scrollbar.css'
-// 字体文件
-import './assets/font/font.css'
 
 Vue.config.productionTip = false
 
