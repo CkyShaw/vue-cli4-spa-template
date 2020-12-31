@@ -29,7 +29,6 @@ Vue.prototype.$_stop = stop
 
 // 图表
 let echarts = require('echarts');
-// import echarts from 'echarts'
 Vue.prototype.$_echarts = echarts
 
 // HighCharts 补充Echarts 特别是3D方面
