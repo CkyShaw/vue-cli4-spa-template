@@ -9,28 +9,13 @@ import store from './store'
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')
 
-// iView 全局(按需引入接入体积优化有问题，会固定引入iview.min.js)
-import iView from 'view-design/dist/iview.min.js'
-import 'view-design/dist/styles/iview.css'
-Vue.use(iView)
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.use(Antd)
 
-// ElementUI 按需
-import { Loading, Scrollbar, Tree, Table, TableColumn, Option } from 'element-ui'
-const ElementUI = [Loading, Scrollbar, Tree, Table, TableColumn, Option]
-
-// Antd 按需
-import { Icon } from 'ant-design-vue'
-const Antd = [Icon]
-
-// NativeUI 原生组件库
-import { chart } from '@/components/native-ui'
-const NativeUI = [chart]
-
-// 捆绑注册
-function* register(name) {
-	Vue.use(name)
-}
-;[...ElementUI, ...Antd, ...NativeUI].forEach(component => register(component).next())
+import DsaDesign from 'dsa-design'
+import 'dsa-design/lib/theme-chalk/index.css'
+Vue.use(DsaDesign)
 
 // 挂载api
 import api from './api'
