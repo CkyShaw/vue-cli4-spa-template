@@ -6,9 +6,11 @@ const resolve = dir => {
 
 // const CompressionPlugin = require('compression-webpack-plugin')
 
+const { name, version } = require('./package.json')
+
 module.exports = {
 	// 打包目录
-	outputDir: 'dist/vue-cli4-spa-template',
+	outputDir: `dist/${name}_${version}`,
 
 	// webpack压缩目录
 	assetsDir: 'pack',
