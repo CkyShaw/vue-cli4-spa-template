@@ -55,15 +55,6 @@ module.exports = {
 		[
 			'component',
 			{
-				libraryName: '@/components/iview-dev',
-				libDir: 'components',
-				style: false
-			},
-			'@/components/iview-dev'
-		],
-		[
-			'component',
-			{
 				libraryName: '@/components/element-dev',
 				libDir: './',
 				style: false

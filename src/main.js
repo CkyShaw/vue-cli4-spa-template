@@ -22,10 +22,6 @@ const ElementUI = [Loading, Scrollbar, Tree, Table, TableColumn, Option]
 import { Icon } from 'ant-design-vue'
 const Antd = [Icon]
 
-// iviewDev 按需
-import { ocxModal, ocxMessage } from '@/components/iview-dev'
-const iviewDev = [ocxModal, ocxMessage]
-
 // NativeUI 原生组件库
 import { chart } from '@/components/native-ui'
 const NativeUI = [chart]
@@ -34,7 +30,7 @@ const NativeUI = [chart]
 function* register(name) {
 	Vue.use(name)
 }
-;[...ElementUI, ...Antd, ...iviewDev, ...NativeUI].forEach(component => register(component).next())
+;[...ElementUI, ...Antd, ...NativeUI].forEach(component => register(component).next())
 
 // 挂载api
 import api from './api'
