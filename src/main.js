@@ -5,10 +5,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-// 实际打包时应该不引入mock
-/* eslint-disable */
-if (process.env.NODE_ENV !== 'production') require('@/mock')
-
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 Vue.use(Antd)
@@ -28,7 +24,7 @@ Vue.prototype.$_listen = listen
 Vue.prototype.$_stop = stop
 
 // 图表
-let echarts = require('echarts');
+let echarts = require('echarts')
 Vue.prototype.$_echarts = echarts
 
 // HighCharts 补充Echarts 特别是3D方面
