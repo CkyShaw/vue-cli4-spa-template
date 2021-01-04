@@ -18,14 +18,14 @@ import api from './api'
 Vue.prototype.$_api = api
 
 // 当前模块全局 mqtt连接
-import { client, listen, stop } from './libs/mqtt'
+/*import { client, listen, stop } from './libs/mqtt'
 Vue.prototype.$_mqtt = client
 Vue.prototype.$_listen = listen
-Vue.prototype.$_stop = stop
+Vue.prototype.$_stop = stop*/
 
 // 图表
-let echarts = require('echarts')
-Vue.prototype.$_echarts = echarts
+/*let echarts = require('echarts')
+Vue.prototype.$_echarts = echarts*/
 
 // HighCharts 补充Echarts 特别是3D方面
 /*import Highcharts from 'highcharts/highstock';
