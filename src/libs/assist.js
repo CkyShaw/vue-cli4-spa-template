@@ -201,17 +201,3 @@ export function findBrothersComponents(context, componentName, exceptMe = true) 
 	if (exceptMe) res.splice(index, 1)
 	return res
 }
-
-// 模块懒加载 ==> Vue推荐 ES6
-// export const getComponent = (path) => () => import(/* webpackChunkName: "ES6Chunk" */ `@/views/${path}`)
-
-// 模块懒加载 ==> WebPack推荐 CommonJS
-// export const getComponent = (path) => r => require.ensure([], () => r(require(`@/views/${path}`)), 'CommonJsChunk');
-
-// 模块懒加载 ==> 参数化
-// export function getComponent(path) {
-// 	let chunkName = path.split('/')[path.split('/').length-1] || 'chunkIsUndefined';
-// 	return r => require.ensure([], () => r(require('@/views/dongshanqiao/Inspection/InspectionReport')), 'chunkName');
-// 	return r => require.ensure([], () => r(require(`@/views/${path}`)), 'CommonJsChunk');
-// }
-// export { getComponent }
