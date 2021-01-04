@@ -1,8 +1,8 @@
 /* 默认上下 */
 .down-enter-active,
 .down-leave-active {
-	transition: opacity 0.5s;
-	transition: all 0.5s ease;
+	transition: opacity 0.6s;
+	transition: all 0.6s cubic-bezier(0.42, 0, 0.11, 1.51);
 }
 .down-enter,
 .down-leave-to {

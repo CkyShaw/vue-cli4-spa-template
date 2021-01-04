@@ -4,7 +4,9 @@
 			<router-link to="/home">Home</router-link> |
 			<router-link to="/about">About</router-link>
 		</div>
-		<router-view />
+		<transition name="down" mode="out-in">
+			<router-view />
+		</transition>
 	</div>
 </template>
 <script>
@@ -39,6 +41,7 @@ export default {
 }
 </script>
 <style lang="stylus">
+@import '~@/assets/style/transition.css'
 #views {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
