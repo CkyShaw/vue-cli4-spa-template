@@ -8,7 +8,6 @@ module.exports = {
 		]
 	],
 	plugins: [
-		// import 暂时不支持本地按需引入
 		/*[
 			'import',
 			{
@@ -24,7 +23,6 @@ module.exports = {
 				styleLibraryName: 'theme-chalk'
 			}
 		],*/
-		// iview 按需引入接入体积优化有问题
 		/*[
 			'import',
 			{
