@@ -10,7 +10,7 @@ import axios from 'axios'
  * @return {Promise}      axios结果
  */
 const loadStaticDataByLocalFile = file => {
-	return axios(`assets/data/${file}`)
+	return axios(`./assets/data/${file}`)
 }
 
 export default {
