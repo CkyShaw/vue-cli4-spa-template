@@ -1,6 +1,3 @@
-/*!
- * 无状态组价，只是负责展示视图的组件
- */
 import error401 from './error401'
 import error404 from './error404'
 import error500 from './error500'
