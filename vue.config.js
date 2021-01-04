@@ -51,11 +51,6 @@ module.exports = {
 	// css相关
 	css: {
 		loaderOptions: {
-			less: {
-				lessOptions: {
-					javascriptEnabled: true
-				}
-			},
 			stylus: {
 				// 导入全局 styl
 				import: '~@/assets/style/global.styl'
