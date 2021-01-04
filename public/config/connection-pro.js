@@ -1,7 +1,7 @@
 /*!
- * 发布模式下的一些请求地址信息
+ * 发布模式下的一些服务地址信息
  */
-var $_production = {
+var $_connection = {
 	request: {
 		location: 'https://produce.com',
 		serviceModule: ''
