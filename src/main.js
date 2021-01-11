@@ -39,7 +39,7 @@ Highcharts3D(Highcharts);
 Highmaps(Highcharts);
 Vue.prototype.$_highCharts = Highcharts*/
 
-// 动态响应rem
+// 设置根字体
 import './libs/rem'
 
 Vue.config.productionTip = false
