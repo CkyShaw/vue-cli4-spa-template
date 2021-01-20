@@ -47,7 +47,7 @@ module.exports = {
 	productionSourceMap: false,
 
 	// 处理依赖包的兼容性
-	transpileDependencies: ['webpack-dev-server/client', 'echarts', 'echarts/dist/echarts.min', 'debug'],
+	transpileDependencies: ['echarts', 'debug'],
 
 	// css相关
 	css: {
