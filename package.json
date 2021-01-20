@@ -41,10 +41,12 @@
 		"gulp": "^4.0.2",
 		"jszip": "^3.5.0",
 		"lint-staged": "^10.5.3",
+		"nib": "^1.1.2",
 		"postcss-pxtorem": "^5.1.1",
 		"prettier": "^2.2.1",
 		"rimraf": "^3.0.2",
 		"stylus": "^0.54.8",
+		"stylus-bem-mixins": "^1.0.2",
 		"stylus-loader": "^3.0.2",
 		"vue-cli-plugin-webpack-bundle-analyzer": "^2.0.0",
 		"vue-template-compiler": "^2.6.11"

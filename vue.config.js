@@ -53,8 +53,9 @@ module.exports = {
 	css: {
 		loaderOptions: {
 			stylus: {
+				use: [require('nib')(), require('stylus-bem-mixins')()],
 				// 导入全局 styl
-				import: '~@/assets/style/global.styl'
+				import: ['~@/assets/style/global.styl', '~nib/index.styl', 'stylus-bem-mixins']
 			}
 		},
 		extract: false
