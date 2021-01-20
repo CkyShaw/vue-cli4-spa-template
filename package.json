@@ -1,7 +1,7 @@
 {
 	"name": "vue-cli4-spa-template",
 	"version": "1.0.0",
-	"private": true,
+	"license": "MIT",
 	"scripts": {
 		"dev": "vue-cli-service serve",
 		"build": "rimraf dist/*.zip && vue-cli-service build && gulp build --gulpfile build/copyfile.js && npm run compression",
