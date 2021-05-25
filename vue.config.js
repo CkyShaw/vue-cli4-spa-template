@@ -116,12 +116,13 @@ module.exports = {
 				]
 			}
 		}
-		// GZ压缩
+		// GZ压缩 nginx配置参考 https://blog.csdn.net/nidynie/article/details/86693780
 		if (process.env.NODE_ENV === 'production') {
 			return {
 				plugins: [
 					new CompressionPlugin({
-						test: /\.(js|css|json|txt|html|ico|svg|png|jpg)(\?.*)?$/i,
+						exclude: /\/iconfont/,
+						test: /\.(js|css|json|txt|html|ico|svg|png|jpg|ttf|woff|woff2)(\?.*)?$/i,
 						algorithm: 'gzip',
 						compressionOptions: { level: 9 },
 						threshold: 10240,
