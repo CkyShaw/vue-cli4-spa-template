@@ -4,7 +4,11 @@ const resolve = dir => {
 	return path.join(__dirname, dir)
 }
 
-// const CompressionPlugin = require('compression-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+
+const ESLintPlugin = require('eslint-webpack-plugin')
+
+const StylelintPlugin = require('stylelint-webpack-plugin')
 
 const { name, version } = require('./package.json')
 
@@ -18,7 +22,9 @@ module.exports = {
 	// webpack压缩目录
 	assetsDir: 'pack',
 
-	// 如果你不需要使用eslint，把lintOnSave设为false即可
+	/**
+	 * 因为启用了 eslint-webpack-plugin 不必开启此项
+	 */
 	lintOnSave: false,
 
 	// 开发服务配置
@@ -77,24 +83,53 @@ module.exports = {
 			.set('@@', resolve('public'))
 			.set('@c', resolve('src/components'))
 			.set('@v', resolve('src/views'))
-	}
 
-	// GZ压缩
-	/*configureWebpack: config => {
+		// 已弃用 转移至 eslint-webpack-plugin
+		/*config.module.rule('eslint').use('eslint-loader').options({
+			fix: true
+		})*/
+	},
+
+	configureWebpack: config => {
+		// fixOnSave
+		if (process.env.NODE_ENV !== 'production') {
+			return {
+				plugins: [
+					new ESLintPlugin({
+						extensions: ['js', 'jsx', 'ts', 'vue'],
+						cache: true,
+						fix: true
+					}),
+					new StylelintPlugin({
+						configFile: './stylelint.config.js',
+						customSyntax: 'stylelint-plugin-stylus/custom-syntax',
+						files: ['**/*.styl', '**/*.vue'],
+						cache: true,
+						fix: true
+					}),
+					new StylelintPlugin({
+						configFile: './stylelint.config.normal.js',
+						files: ['**/*.css', '**/*.less'],
+						cache: true,
+						fix: true
+					})
+				]
+			}
+		}
+		// GZ压缩
 		if (process.env.NODE_ENV === 'production') {
 			return {
 				plugins: [
 					new CompressionPlugin({
-						filename: '[path].br[query]',
-						algorithm: 'brotliCompress',
-						test: /\.(js|css|html|svg)$/,
-						compressionOptions: { level: 11 },
+						test: /\.(js|css|json|txt|html|ico|svg|png|jpg)(\?.*)?$/i,
+						algorithm: 'gzip',
+						compressionOptions: { level: 9 },
 						threshold: 10240,
 						minRatio: 0.8,
-						deleteOriginalAssets: false,
-					}),
+						deleteOriginalAssets: false
+					})
 				]
 			}
 		}
-	}*/
+	}
 }

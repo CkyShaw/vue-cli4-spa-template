@@ -187,9 +187,8 @@ export function findComponentsUpward(context, componentName) {
 	if (parent) {
 		if (parent.$options.name === componentName) parents.push(parent)
 		return parents.concat(findComponentsUpward(parent, componentName))
-	} else {
-		return []
 	}
+	return []
 }
 
 // Find brothers components 通过组件名称找到目标源的兄弟组件，默认包含自身

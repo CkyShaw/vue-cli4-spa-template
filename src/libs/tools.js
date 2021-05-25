@@ -97,7 +97,7 @@ const isEarly = (timeStamp, currentTime) => {
  * @description 如果传入的数值小于10，即位数只有1位，则在前面补充0
  */
 const getHandledValue = num => {
-	return num < 10 ? '0' + num : num
+	return num < 10 ? `0${num}` : num
 }
 
 /**
@@ -116,9 +116,9 @@ const getDate = (timeStamp, startType) => {
 	let resStr = ''
 
 	if (startType === 'year') {
-		resStr = year + '-' + month + '-' + date + ' ' + hours + ':' + minutes + ':' + second
+		resStr = `${year}-${month}-${date} ${hours}:${minutes}:${second}`
 	} else {
-		resStr = month + '-' + date + ' ' + hours + ':' + minutes
+		resStr = `${month}-${date} ${hours}:${minutes}`
 	}
 	return resStr
 }
@@ -154,19 +154,19 @@ export const getRelativeTime = timeStamp => {
 	// 少于等于59秒
 
 	if (diff <= 59) {
-		resStr = diff + '秒' + dirStr
+		resStr = `${diff}秒${dirStr}`
 	}
 	// 多于59秒，少于等于59分钟59秒
 	else if (diff > 59 && diff <= 3599) {
-		resStr = Math.floor(diff / 60) + '分钟' + dirStr
+		resStr = `${Math.floor(diff / 60)}分钟${dirStr}`
 	}
 	// 多于59分钟59秒，少于等于23小时59分钟59秒
 	else if (diff > 3599 && diff <= 86399) {
-		resStr = Math.floor(diff / 3600) + '小时' + dirStr
+		resStr = `${Math.floor(diff / 3600)}小时${dirStr}`
 	}
 	// 多于23小时59分钟59秒，少于等于29天59分钟59秒
 	else if (diff > 86399 && diff <= 2623859) {
-		resStr = Math.floor(diff / 86400) + '天' + dirStr
+		resStr = `${Math.floor(diff / 86400)}天${dirStr}`
 	}
 	// 多于29天59分钟59秒，少于364天23小时59分钟59秒，且传入的时间戳早于当前
 	else if (diff > 2623859 && diff <= 31567859 && IS_EARLY) {
@@ -212,7 +212,7 @@ export const on = (function () {
 	}
 	return function (element, event, handler) {
 		if (element && event && handler) {
-			element.attachEvent('on' + event, handler)
+			element.attachEvent(`on${event}`, handler)
 		}
 	}
 })()
@@ -230,7 +230,7 @@ export const off = (function () {
 	}
 	return function (element, event, handler) {
 		if (element && event) {
-			element.detachEvent('on' + event, handler)
+			element.detachEvent(`on${event}`, handler)
 		}
 	}
 })()
@@ -292,7 +292,7 @@ export function parseTime(time, cFormat) {
 			time = parseInt(time)
 		}
 		if (typeof time === 'number' && time.toString().length === 10) {
-			time = time * 1000
+			time *= 1000
 		}
 		date = new Date(time)
 	}
@@ -312,7 +312,7 @@ export function parseTime(time, cFormat) {
 			return ['日', '一', '二', '三', '四', '五', '六'][value]
 		}
 		if (result.length > 0 && value < 10) {
-			value = '0' + value
+			value = `0${value}`
 		}
 		return value || 0
 	})
@@ -325,10 +325,10 @@ export function parseTime(time, cFormat) {
  * @returns {string}
  */
 export function formatTime(time, option) {
-	if (('' + time).length === 10) {
+	if (`${time}`.length === 10) {
 		time = parseInt(time) * 1000
 	} else {
-		time = +time
+		time = Number(time)
 	}
 	const d = new Date(time)
 	const now = Date.now()
@@ -339,17 +339,16 @@ export function formatTime(time, option) {
 		return '刚刚'
 	} else if (diff < 3600) {
 		// less 1 hour
-		return Math.ceil(diff / 60) + '分钟前'
+		return `${Math.ceil(diff / 60)}分钟前`
 	} else if (diff < 3600 * 24) {
-		return Math.ceil(diff / 3600) + '小时前'
+		return `${Math.ceil(diff / 3600)}小时前`
 	} else if (diff < 3600 * 24 * 2) {
 		return '1天前'
 	}
 	if (option) {
 		return parseTime(time, option)
-	} else {
-		return d.getMonth() + 1 + '月' + d.getDate() + '日' + d.getHours() + '时' + d.getMinutes() + '分'
 	}
+	return `${d.getMonth() + 1}月${d.getDate()}日${d.getHours()}时${d.getMinutes()}分`
 }
 
 /**
@@ -410,7 +409,7 @@ export function param(json) {
 	return cleanArray(
 		Object.keys(json).map(key => {
 			if (json[key] === undefined) return ''
-			return encodeURIComponent(key) + '=' + encodeURIComponent(json[key])
+			return `${encodeURIComponent(key)}=${encodeURIComponent(json[key])}`
 		})
 	).join('&')
 }
@@ -425,13 +424,11 @@ export function param2Obj(url) {
 		return {}
 	}
 	return JSON.parse(
-		'{"' +
-			decodeURIComponent(search)
-				.replace(/"/g, '\\"')
-				.replace(/&/g, '","')
-				.replace(/=/g, '":"')
-				.replace(/\+/g, ' ') +
-			'"}'
+		`{"${decodeURIComponent(search)
+			.replace(/"/g, '\\"')
+			.replace(/&/g, '","')
+			.replace(/[=]/g, '":"')
+			.replace(/\+/g, ' ')}"}`
 	)
 }
 
@@ -480,7 +477,7 @@ export function toggleClass(element, className) {
 	let classString = element.className
 	const nameIndex = classString.indexOf(className)
 	if (nameIndex === -1) {
-		classString += '' + className
+		classString += `${className}`
 	} else {
 		classString = classString.substr(0, nameIndex) + classString.substr(nameIndex + className.length)
 	}
@@ -494,9 +491,8 @@ export function toggleClass(element, className) {
 export function getTime(type) {
 	if (type === 'start') {
 		return new Date().getTime() - 3600 * 1000 * 24 * 90
-	} else {
-		return new Date(new Date().toDateString())
 	}
+	return new Date(new Date().toDateString())
 }
 
 /**
@@ -510,7 +506,7 @@ export function debounce(func, wait, immediate) {
 
 	const later = function () {
 		// 据上一次触发时间间隔
-		const last = +new Date() - timestamp
+		const last = Number(new Date()) - timestamp
 
 		// 上次被包装函数被调用时间间隔 last 小于设定时间间隔 wait
 		if (last < wait && last > 0) {
@@ -527,7 +523,7 @@ export function debounce(func, wait, immediate) {
 
 	return function (...args) {
 		context = this
-		timestamp = +new Date()
+		timestamp = Number(new Date())
 		const callNow = immediate && !timeout
 		// 如果延时不存在，重新设定延时
 		if (!timeout) timeout = setTimeout(later, wait)
@@ -574,9 +570,9 @@ export function uniqueArr(arr) {
  * @returns {string}
  */
 export function createUniqueString() {
-	const timestamp = +new Date() + ''
-	const randomNum = parseInt((1 + Math.random()) * 65536) + ''
-	return (+(randomNum + timestamp)).toString(32)
+	const timestamp = `${Number(new Date())}`
+	const randomNum = `${parseInt((1 + Math.random()) * 65536)}`
+	return Number(randomNum + timestamp).toString(32)
 }
 
 /**
@@ -586,7 +582,7 @@ export function createUniqueString() {
  * @returns {boolean}
  */
 export function hasClass(ele, cls) {
-	return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))
+	return Boolean(ele.className.match(new RegExp(`(\\s|^)${cls}(\\s|$)`)))
 }
 
 /**
@@ -595,7 +591,7 @@ export function hasClass(ele, cls) {
  * @param {string} cls
  */
 export function addClass(ele, cls) {
-	if (!hasClass(ele, cls)) ele.className += ' ' + cls
+	if (!hasClass(ele, cls)) ele.className += ` ${cls}`
 }
 
 /**
@@ -605,7 +601,7 @@ export function addClass(ele, cls) {
  */
 export function removeClass(ele, cls) {
 	if (hasClass(ele, cls)) {
-		const reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
+		const reg = new RegExp(`(\\s|^)${cls}(\\s|$)`)
 		ele.className = ele.className.replace(reg, ' ')
 	}
 }
@@ -718,9 +714,8 @@ export const coerceTruthyValueToArray = function (val) {
 		return val
 	} else if (val) {
 		return [val]
-	} else {
-		return []
 	}
+	return []
 }
 
 export const isIE = function () {
@@ -763,9 +758,8 @@ export const looseEqual = function (a, b) {
 		return JSON.stringify(a) === JSON.stringify(b)
 	} else if (!isObjectA && !isObjectB) {
 		return String(a) === String(b)
-	} else {
-		return false
 	}
+	return false
 }
 
 export const arrayEquals = function (arrayA, arrayB) {

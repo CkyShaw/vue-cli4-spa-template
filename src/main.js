@@ -35,23 +35,12 @@ Vue.prototype.$_stop = stop*/
 /*let echarts = require('echarts')
 Vue.prototype.$_echarts = echarts*/
 
-// HighCharts 补充Echarts 特别是3D方面
-/*import Highcharts from 'highcharts/highstock';
-import HighchartsMore from 'highcharts/highcharts-more';
-import HighchartsDrilldown from 'highcharts/modules/drilldown';
-import Highcharts3D from 'highcharts/highcharts-3d';
-import Highmaps from 'highcharts/modules/map';
-HighchartsMore(Highcharts)
-HighchartsDrilldown(Highcharts);
-Highcharts3D(Highcharts);
-Highmaps(Highcharts);
-Vue.prototype.$_highCharts = Highcharts*/
-
 // 设置根字体
 import './libs/rem'
 
 Vue.config.productionTip = false
 
+// eslint-disable-next-line vue/require-name-property
 new Vue({
 	router,
 	store,
