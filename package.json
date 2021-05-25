@@ -74,8 +74,8 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,vue}": "vue-cli-service lint --cache --fix",
-		"*.{styl,vue}": "stylelint --cache --custom-syntax stylelint-plugin-stylus/custom-syntax --fix",
-		"*.{css,less}": "stylelint --cache --config stylelint.config.normal.js --fix",
+		"*.{styl,vue}": "stylelint --allow-empty-input --cache --custom-syntax stylelint-plugin-stylus/custom-syntax --fix",
+		"*.{css,less}": "stylelint --allow-empty-input --cache --config stylelint.config.normal.js --fix",
 		"*.{json,css,less,scss,md,html}": "prettier --write"
 	}
 }
