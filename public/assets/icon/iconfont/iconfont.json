@@ -6,6 +6,132 @@
 	"description": "",
 	"glyphs": [
 		{
+			"icon_id": "21555337",
+			"name": "人脸识别 ",
+			"font_class": "renlianshibie",
+			"unicode": "e68a",
+			"unicode_decimal": 59018
+		},
+		{
+			"icon_id": "1893832",
+			"name": "其他",
+			"font_class": "qita",
+			"unicode": "e683",
+			"unicode_decimal": 59011
+		},
+		{
+			"icon_id": "3041929",
+			"name": "密码",
+			"font_class": "mima",
+			"unicode": "e684",
+			"unicode_decimal": 59012
+		},
+		{
+			"icon_id": "10961820",
+			"name": "远程",
+			"font_class": "yuancheng",
+			"unicode": "e685",
+			"unicode_decimal": 59013
+		},
+		{
+			"icon_id": "19848275",
+			"name": "刷卡 (1)",
+			"font_class": "shuaka1",
+			"unicode": "e739",
+			"unicode_decimal": 59193
+		},
+		{
+			"icon_id": "20164970",
+			"name": "按钮",
+			"font_class": "anniu",
+			"unicode": "e686",
+			"unicode_decimal": 59014
+		},
+		{
+			"icon_id": "21535577",
+			"name": "波动分析",
+			"font_class": "bodongfenxi",
+			"unicode": "e682",
+			"unicode_decimal": 59010
+		},
+		{
+			"icon_id": "3627743",
+			"name": "违章",
+			"font_class": "weizhang",
+			"unicode": "e681",
+			"unicode_decimal": 59009
+		},
+		{
+			"icon_id": "20847247",
+			"name": "视频诊断",
+			"font_class": "shipinzhenduan",
+			"unicode": "e680",
+			"unicode_decimal": 59008
+		},
+		{
+			"icon_id": "145630",
+			"name": "灯",
+			"font_class": "deng",
+			"unicode": "e67c",
+			"unicode_decimal": 59004
+		},
+		{
+			"icon_id": "6506292",
+			"name": "温度",
+			"font_class": "wendu-copy-copy",
+			"unicode": "e67d",
+			"unicode_decimal": 59005
+		},
+		{
+			"icon_id": "14510007",
+			"name": "湿度",
+			"font_class": "shidu",
+			"unicode": "e67e",
+			"unicode_decimal": 59006
+		},
+		{
+			"icon_id": "16326959",
+			"name": "防汛",
+			"font_class": "fangxun",
+			"unicode": "e837",
+			"unicode_decimal": 59447
+		},
+		{
+			"icon_id": "15392665",
+			"name": "预警",
+			"font_class": "yujing",
+			"unicode": "e67b",
+			"unicode_decimal": 59003
+		},
+		{
+			"icon_id": "4784150",
+			"name": "正常",
+			"font_class": "zhengchang",
+			"unicode": "e67a",
+			"unicode_decimal": 59002
+		},
+		{
+			"icon_id": "9626988",
+			"name": "注意",
+			"font_class": "zhuyi",
+			"unicode": "e88d",
+			"unicode_decimal": 59533
+		},
+		{
+			"icon_id": "10936714",
+			"name": "节点",
+			"font_class": "jiedian",
+			"unicode": "e679",
+			"unicode_decimal": 59001
+		},
+		{
+			"icon_id": "16370791",
+			"name": "督察",
+			"font_class": "ducha",
+			"unicode": "e7db",
+			"unicode_decimal": 59355
+		},
+		{
 			"icon_id": "11953514",
 			"name": "巡检配置",
 			"font_class": "xunjianpeizhi",
