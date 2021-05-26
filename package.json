@@ -16,7 +16,7 @@
 		"ant-design-vue": "^1.7.5",
 		"axios": "^0.21.1",
 		"bbo": "^1.1.26",
-		"core-js": "^3.12.1",
+		"core-js": "^3.13.0",
 		"dsa-design": "^0.5.3",
 		"dsa-utils": "^1.0.2",
 		"echarts": "^5.1.1",
