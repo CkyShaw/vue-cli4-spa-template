@@ -21,7 +21,6 @@
 		"dsa-utils": "^1.0.2",
 		"echarts": "^5.1.1",
 		"moment": "^2.29.1",
-		"mqtt": "^4.2.6",
 		"resize-observer-polyfill": "^1.5.1",
 		"throttle-debounce": "^3.0.1",
 		"vue": "^2.6.12",
