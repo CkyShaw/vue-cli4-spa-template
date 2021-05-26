@@ -6,7 +6,7 @@ module.exports = {
 	plugins: ['prettier'],
 	extends: ['plugin:vue/recommended', '@qif/eslint-config/vue', 'prettier'],
 	parserOptions: {
-		parser: 'babel-eslint'
+		parser: '@babel/eslint-parser'
 	},
 	rules: {
 		'prettier/prettier': 'warn',
