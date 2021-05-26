@@ -19,7 +19,7 @@ module.exports = {
 	// 打包目录
 	outputDir: `dist/${name}_${version}`,
 
-	// webpack压缩目录
+	// webpack资源目录
 	assetsDir: 'pack',
 
 	/**
