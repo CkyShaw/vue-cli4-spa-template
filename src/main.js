@@ -17,11 +17,11 @@ Vue.use(DsaDesign)
 import api from './api'
 Vue.prototype.$_api = api
 
-// qif iconfont http://172.26.1.231:12000/iconfont/index.html
+// qif iconfont http://172.26.1.201:9982/iconfont/index.html
 import '@qif/iconfont'
 
-// dsa utils http://172.26.1.231:12000/dsa-utils-doc/index.html
-/*import * as dsaUtils from 'dsa-utils'
+// dsa utils http://172.26.1.201:9982/dsa-utils-doc/index.html
+/*import * as dsaUtils from '@qif/dsa-utils'
 Vue.prototype.$_d = dsaUtils*/
 
 // bbo https://tnfe.github.io/bbo/#logs
