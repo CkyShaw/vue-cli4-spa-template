@@ -9,6 +9,8 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 Vue.use(Antd)
 
+console.log(1)
+
 import DsaDesign from '@qif/dsa-design'
 import '@qif/dsa-design/lib/theme-dark-blue/index.css'
 Vue.use(DsaDesign)
