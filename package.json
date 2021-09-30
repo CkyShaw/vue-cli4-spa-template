@@ -44,6 +44,7 @@
 		"babel-plugin-import": "^1.13.3",
 		"compression-webpack-plugin": "^6.1.1",
 		"eslint": "^7.32.0",
+		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-vue": "^7.18.0",
 		"eslint-webpack-plugin": "^2.5.4",
 		"gulp": "^4.0.2",
